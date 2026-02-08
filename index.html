@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Alma 💜</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6a0dad, #b266ff);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 40px;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #6a0dad;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      animation: floatUp 8s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="allmine-brent-faiyaz.mp3.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="card">
+      <h1>PRINCESS 👑💜</h1>
+
+      <p>
+        Alma, this page is just a small piece of my heart for you.
+        I hope it reminds you how special you are to me 💜💖
+      </p>
+
+      <button class="btn" onclick="playMusic()">
+        ▶ Play Our Song 🎶
+      </button>
+
+      <button class="btn" onclick="alert('Alma, you are mine forever 💜💖')">
+        Click for a Surprise 💝
+      </button>
+      <center><p>My Alma 💜, My Princess 👑
+
+There are so many things I feel for you that words struggle to carry, but tonight I choose to try—because you deserve to know just how deep my love for you truly goes. Loving you is not something I do lightly; it is something my heart does naturally, effortlessly, and completely. You have become a part of me in a way I never expected, and I am grateful for you every single day.
+
+I cherish you more than I can explain. I cherish your presence in my life, your heart, your thoughts, your emotions, and everything that makes you you. The way you make me feel seen, understood, and appreciated means more to me than you will ever know. Being with you is not just enjoyable—it is comforting, fulfilling, and deeply meaningful. Time with you feels right, like my soul recognizes yours.
+
+I genuinely enjoy being with you. I enjoy our conversations, our laughter, our quiet moments, and even the moments where we simply exist together. You bring peace into my life, and at the same time, you ignite joy in my heart. With you, love feels real, safe, and intentional. My love for you is deep—deeper than words, deeper than distance, deeper than circumstances. I am ready to choose you, not just today, but for life. I see a future with you, and in that future, you are not temporary—you are permanent. I am willing to grow with you, stand with you, and walk beside you through every season of life. I don’t just want you for now; I want you always. I cannot afford to lose you. Not because of fear, but because my heart knows your value. What we have is rare, and I will protect it with everything I am. You mean too much to me to ever take you for granted. You are irreplaceable to me, Alma, and my heart belongs to you completely. I miss you more than I can put into words, and I truly cannot wait to meet with you again. I look forward to that moment—the smile, the embrace, the feeling of finally being close to you again. Until then, I carry you with me in my thoughts, my heart, and my prayers. Distance may separate us physically, but it has never separated my love for you. I also want to say I’m truly sorry that I won’t be able to be with you during Valentine’s Day. Please know this breaks my heart, because if love alone could move mountains, I would be right there with you. Even though I can’t be there physically, my love for you remains constant and unwavering. My heart is with you, today and always. Alma, you are my Princess 👑💜, my joy, my peace, and my forever. I love you deeply, sincerely, and endlessly. No matter where life takes us, know this—my love for you is real, strong, and here to stay. 
+</p></center>
+<p>Always yours, VUTII 🥳🥳🥳</p>
+<P>With all my heart ❤️</P>
+
+      <footer> 
+        MADE BY VUTI  ❤️ just for Alma
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Play music after user interaction
+    function playMusic() {
+      const music = document.getElementById('bgMusic');
+      music.play();
+    }
+
+    // Floating hearts
+    const emojis = ['❤️','💖','💕','💘','💞','💜'];
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = '-20px';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }, 500);
+  </script>
+
+</body>
+</html>
