@@ -77,6 +77,44 @@
       100% { transform: translateY(-120vh); opacity: 0; }
     }
   </style>
+
+  <script>
+    // YES button
+    function yesValentine(){
+      alert('Yayyy Thank you Alma for being my valentine 💜 I love you forever Alma 👑');
+    }
+
+    // NO button moves
+    const noBtn = document.getElementById('noBtn');
+    noBtn.addEventListener('mouseover',()=>{
+      noBtn.style.position='absolute';
+      noBtn.style.left=Math.random()*70+'%';
+      noBtn.style.top=Math.random()*70+'%';
+    });
+
+    // Typed letter
+    const text="i love you"
+    let idx=0;
+    function type(){
+      if(idx<text.length){
+        document.getElementById('typed').innerHTML+=text.charAt(idx);
+        idx++;
+        setTimeout(type,70);
+      }
+    }
+    type();
+
+    // Countdown
+    const valentine = new Date(new Date().getFullYear(),1,14);
+    setInterval(()=>{
+      const now=new Date();
+      const diff=valentine-now;
+      const d=Math.floor(diff/86400000);
+      const h=Math.floor(diff/3600000)%24;
+      const m=Math.floor(diff/60000)%60;
+      document.getElementById('countdown').innerText=`${d} days ${h} hrs ${m} mins left`;
+    },1000);
+  </script>
 </head>
 
 <body>
@@ -99,9 +137,15 @@
         ▶ Play Our Song 🎶
       </button>
 
-      <button class="btn" onclick="alert('Alma, you are mine forever 💜💖')">
+      <button class="btn" onclick="alert('Thank you for being my Valentine’s 💜💖')">
         Click for a Surprise 💝
       </button>
+
+      <h3 style="margin-top:30px;color:#6a0dad">Will you be my Valentine? 💜</h3>
+    <div style="display:flex;gap:15px;justify-content:center;margin-top:15px">
+      <button class="btn" onclick="yesValentine()">YES 💍</button>
+      <button class="btn" id="noBtn" style="background:#bbb;color:#333">NO 🙈</button>
+    </div>
       <center><p>My Alma 💜, My Princess 👑
 
 There are so many things I feel for you that words struggle to carry, but today I choose to try—because you deserve to know just how deep my love for you truly goes. Loving you is not something I do lightly; it is something my heart does naturally, effortlessly, and completely. You have become a part of me in a way I never expected, and I am grateful for you every single day.
@@ -112,7 +156,7 @@ I genuinely enjoy being with you. I enjoy our conversations, our laughter, our q
 
 You awaken parts of my soul that I didn’t know were waiting for you. Your voice, your presence, your essence—they calm me and excite me all at once. You remind me that love can be gentle without being weak, passionate without being reckless, and deep without being heavy. I admire you more than I can properly express—not just for how you love, but for who you are when no one is watching. Your heart is rare, and I feel incredibly blessed to be someone you allow close to it.
 
-If I could give you one thing, it would be the certainty that you are cherished beyond measure. That you are wanted, valued, and loved in ways that go far beyond words or moments. My affection for you is patient, devoted, and sincere. Wherever you are, whatever you are doing, know this: someone is loving you quietly, steadily, and wholeheartedly. And that love is yours—freely, fully, and with all the care in the world.  <p class="bgMusic">IG YOU KNOW WHY THERE'S ALOT OF PURPLE COLOR ON THIS PAGE 😝😝😝😝😝</p>
+If I could give you one thing, it would be the certainty that you are cherished beyond measure. That you are wanted, valued, and loved in ways that go far beyond words or moments. My affection for you is patient, devoted, and sincere. Wherever you are, whatever you are doing, know this: someone is loving you quietly, steadily, and wholeheartedly. And that love is yours—freely, fully, and with all the care in the world.
 </p></center>
 <p>Always yours, VUTII 🥳🥳🥳</p>
 <P>With all my heart ❤️</P>
