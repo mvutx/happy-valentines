@@ -120,7 +120,7 @@
 <body>
 
   <!-- Music -->
-  <audio id="bgMusic">
+  <audio id="bgMusic" preload="auto" playsinline>
   <source src="music/allmine-brent-faiyaz.mp3.mp3" type="audio/mpeg">
   <source src="music/Daniel Caesar - Superpowers (Official Audio).mp3" type="audio/mpeg">
   <source src="music/Thinkin Bout You [6JHu3b-pbh8].mp3" type="audio/mpeg">
@@ -191,35 +191,43 @@ And that love is yours—freely, fully, and with all the care in the world. 💜
   <marquee behavior="" direction="">#iloveyousoomuchhhhalma🫶🥺❤️‍🩹</marquee>
 
   <script>
-    // Play music after user interaction
-    // Play music
     const playlist = [
-      "music/allmine-brent-faiyaz.mp3.mp3",
-      "music/Daniel Caesar - Superpowers (Official Audio).mp3",
-      "music/Thinkin Bout You [6JHu3b-pbh8].mp3"
+    "music/allmine-brent-faiyaz.mp3.mp3",
+    "music/Daniel Caesar - Superpowers (Official Audio).mp3",
+    "music/Thinkin Bout You [6JHu3b-pbh8].mp3"
   ];
 
   let currentSong = 0;
   const music = document.getElementById("bgMusic");
+  let userStarted = false;
 
   function playMusic() {
-    music.src = playlist[currentSong];
-    music.play();
+    if (!userStarted) {
+      userStarted = true;          // lock user interaction
+      currentSong = 0;
+      music.src = playlist[currentSong];
+    }
+    music.play().catch(err => {
+      console.log("Playback blocked:", err);
+    });
   }
 
   function pauseMusic() {
     music.pause();
   }
-   // Auto-play next song
+
   music.addEventListener("ended", () => {
+    if (!userStarted) return;
+
     currentSong++;
-    if (currentSong < playlist.length) {
-      music.src = playlist[currentSong];
-      music.play();
-    } else {
-      currentSong = 0; // reset after last song
+    if (currentSong >= playlist.length) {
+      currentSong = 0; // loop playlist
     }
+
+    music.src = playlist[currentSong];
+    music.play();
   });
+    
     // Floating hearts
     const emojis = ['❤️','💖','💕','💘','💞','💜','🥺','🫶','❤️‍🩹','💝','💗','💌','👰','🤵‍♂️','🌹','🎂'];
     setInterval(() => {
