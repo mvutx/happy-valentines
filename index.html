@@ -120,12 +120,12 @@
 <body>
 
   <!-- Music -->
-  <audio id="bgMusic" loop>
-    <source src="allmine-brent-faiyaz.mp3.mp3" type="audio/mpeg">
-    <source src="music/Frank Ocean - Ivy [AE005nZeF-A].mp3" type="audio/mpeg">
-    <source src="music/Thinkin Bout You [6JHu3b-pbh8].mp3" type="audio/mpeg">
+  <audio id="bgMusic">
+  <source src="music/allmine-brent-faiyaz.mp3.mp3" type="audio/mpeg">
+  <source src="music/Frank Ocean - Ivy [AE005nZeF-A].mp3" type="audio/mpeg">
+  <source src="music/Thinkin Bout You [6JHu3b-pbh8].mp3" type="audio/mpeg">
+</audio>
 
-  </audio>
 
   <div class="container">
     <div class="card">
@@ -191,17 +191,33 @@ And that love is yours—freely, fully, and with all the care in the world. 💜
   <script>
     // Play music after user interaction
     // Play music
+    const playlist = [
+    "music/allmine-brent-faiyaz.mp3.mp3",
+    "music/second-song.mp3",
+    "music/third-song.mp3"
+  ];
+
+  let currentSong = 0;
+  const music = document.getElementById("bgMusic");
+
   function playMusic() {
-    const music = document.getElementById('bgMusic');
+    music.src = playlist[currentSong];
     music.play();
   }
 
-  // Pause music
   function pauseMusic() {
-    const music = document.getElementById('bgMusic');
     music.pause();
   }
-
+   // Auto-play next song
+  music.addEventListener("ended", () => {
+    currentSong++;
+    if (currentSong < playlist.length) {
+      music.src = playlist[currentSong];
+      music.play();
+    } else {
+      currentSong = 0; // reset after last song
+    }
+  });
     // Floating hearts
     const emojis = ['❤️','💖','💕','💘','💞','💜','🥺','🫶','❤️‍🩹','💝','💗','💌','👰','🤵‍♂️','🌹','🎂'];
     setInterval(() => {
