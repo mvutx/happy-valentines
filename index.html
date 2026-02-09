@@ -81,7 +81,7 @@
   <script>
     // YES button
     function yesValentine(){
-      alert('Yayyy Thank you Alma for being my valentine 💜 I love you forever Alma 🫶🥺');
+      alert('Yayyy Thank you Alma for being my valentine 💜 I love you so much Alma 🫶🥺');
     }
 
     // NO button moves
@@ -134,8 +134,13 @@
       </p>
 
       <button class="btn" onclick="playMusic()">
-        ▶ Play Our Song 🎶
-      </button>
+  ▶ Play Our Song 🎶
+</button>
+
+<button class="btn" onclick="pauseMusic()">
+  ⏸ Pause Music
+</button>
+
 
       <button class="btn" onclick="alert('I’m choosing to love you better than before 💜💖')">
         Click for a Surprise 💝
@@ -169,10 +174,17 @@ If I could give you one thing, it would be the certainty that you are cherished 
 
   <script>
     // Play music after user interaction
-    function playMusic() {
-      const music = document.getElementById('bgMusic');
-      music.play();
-    }
+    // Play music
+  function playMusic() {
+    const music = document.getElementById('bgMusic');
+    music.play();
+  }
+
+  // Pause music
+  function pauseMusic() {
+    const music = document.getElementById('bgMusic');
+    music.pause();
+  }
 
     // Floating hearts
     const emojis = ['❤️','💖','💕','💘','💞','💜','🥺','🫶','❤️‍🩹','💝','💗','💌','👰','🤵‍♂️','🌹','🎂'];
